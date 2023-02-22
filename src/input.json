@@ -1,0 +1,22 @@
+{
+  "LC_blue-1": {
+    "value": "#071D49",
+    "type": "color"
+  },
+  "Tietoevry Sans": {
+    "value": "Tietoevry Sans 1",
+    "type": "fontFamilies"
+  },
+  "_font-size-24": {
+    "value": "24",
+    "type": "fontSizes"
+  },
+  "-font weight-300": {
+    "value": "300",
+    "type": "fontWeights"
+  },
+  "SIZE_Xtra-small": {
+    "value": "32",
+    "type": "size"
+  }
+}
