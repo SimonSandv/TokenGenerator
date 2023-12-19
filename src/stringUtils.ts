@@ -1,5 +1,26 @@
 //Utils.ts
 
+export type ColorFormat = 'hex' | 'rgb' | 'rgba' | 'hsl' | 'unknown';
+
+export const identifyColorFormat = (color: string): ColorFormat => {
+  const hexRegex = /^#(?:[0-9a-fA-F]{3}){1,2}$/;
+  const rgbRegex = /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/;
+  const rgbaRegex = /^rgba\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(0|1|0?\.\d+)\)$/;
+  const hslRegex = /^hsl\((\d{1,3}),\s*(\d{1,3})%,\s*(\d{1,3})%\)$/;
+
+  if (hexRegex.test(color)) {
+    return 'hex';
+  } else if (rgbRegex.test(color)) {
+    return 'rgb';
+  } else if (rgbaRegex.test(color)) {
+    return 'rgba';
+  } else if (hslRegex.test(color)) {
+    return 'hsl';
+  } else {
+    return 'unknown';
+  }
+};
+
 export const replaceNonAlphanumericCharacters = (str: string, to: string) =>
 {
   return str.replace(/[^A-Za-z0-9]/g, to);

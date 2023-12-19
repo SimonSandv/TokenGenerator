@@ -1,4 +1,4 @@
-import { tokens } from './../dist/tokens/tokens';
+import tokens from './tokens';
 
 type PathImpl<T, K extends keyof T> = K extends string
   ? T[K] extends Record<string, any>
